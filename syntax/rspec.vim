@@ -7,22 +7,22 @@
 runtime! syntax/ruby.vim
 unlet! b:current_syntax
 
-syntax keyword rspecGroupMethods context describe example it its let let\! it_should_behave_like shared_examples shared_examples_for subject it_behaves_like pending skip specify When Then Given Invariant feature scenario given given\!
+syntax keyword rspecGroupMethods context describe example it its let let\! it_should_behave_like shared_examples shared_examples_for it_behaves_like pending skip specify When Then Given Invariant feature scenario given given\!
 highlight link rspecGroupMethods Statement
 
 syntax keyword rspecBeforeAndAfter after after_suite_parts append_after append_before before before_suite_parts prepend_after prepend_before around
-highlight link rspecBeforeAndAfter Identifier
+highlight link rspecBeforeAndAfter Statement
 
 syntax keyword rspecMocks double mock stub stub_chain
-highlight link rspecMocks Constant
+highlight link rspecMocks Function
 
 syntax keyword rspecMockMethods and_raise and_return and_throw and_yield build_child called_max_times expected_args invoke matches
 highlight link rspecMockMethods Function
 
-syntax keyword rspecKeywords should should_not should_not_receive should_receive
-highlight link rspecKeywords Constant
+" syntax keyword rspecKeywords should should_not should_not_receive should_receive
+" highlight link rspecKeywords Function
 
-syntax keyword rspecMatchers described_class is_expected be change eq eql equal errors_on exist expect expect_any_instance_of allow allow_any_instance_of receive have have_at_least have_at_most have_exactly include match matcher raise_error raise_exception respond_to satisfy throw_symbol to to_not not_to when wrap_expectation
+syntax keyword rspecMatchers subject described_class is_expected be change eq eql equal errors_on exist expect expect_any_instance_of allow allow_any_instance_of receive have have_at_least have_at_most have_exactly include match matcher raise_error raise_exception respond_to satisfy throw_symbol to to_not not_to when wrap_expectation
 
 " rspec-mongoid exclusive matchers
 syntax keyword rspecMatchers embed_one embed_many belong_to validate_format_of validate_associated validate_exclusion_of validate_inclusion_of validate_length_of custom_validate accept_nested_attributes_for
